@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>lab3</title>
+</h:head>
+
+<style type="text/css">
+    body {
+        font-family: "Calibri", sans-serif;
+        font-size: large;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #a0a8ae;
+        box-sizing: border-box;
+        border-radius: 6px;
+    }
+
+    .left {
+        float: left;
+        display: block;
+        width: 300px;
+        margin: 40px;
+    }
+
+    .right {
+        float: right;
+        display: block;
+        width: 300px;
+        margin: 40px;
+    }
+
+    .output {
+        text-align: center;
+        border-radius: 6px;
+        border: 2px solid #dee1e2;
+        color: rgb(14, 14, 16);
+        background: #dee1e2;
+        margin: 10px;
+        min-height: 36px;
+        overflow: hidden;
+    }
+
+    .input_field {
+        border-radius: 6px;
+        border: none;
+        color: rgb(14, 14, 16);
+        background: #c3c7cd;
+        height: 36px;
+        margin-left: 10px;
+        transition: all 100ms ease-out
+    }
+</style>
+
+<h:body>
+    <h:form>
+
+        <div class="container">
+
+            <div class="left">Safonova Olga P3207</div>
+
+
+            <div class="right output">
+                <h:form>
+                    <h1 class="text-center">
+                        <h:outputText value="#{controller.getTime()}" id="timer" class="output"></h:outputText>
+                    </h1>
+
+                    <p:poll interval="8" update="timer" />
+
+                    <h:commandButton action="main.xhtml?faces-redirect=true" value="main page" class="input_field"/>
+                </h:form>
+            </div>
+        </div>
+    </h:form>
+</h:body>
+
+</html>
